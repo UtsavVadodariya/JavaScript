@@ -20,5 +20,4 @@ int main() {
 
     printf("Length is: %d\n", length);
 
-    return 0;
 }

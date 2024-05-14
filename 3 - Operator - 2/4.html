@@ -1,0 +1,42 @@
+<!-- 4. Find Average of students marks obtained in 3 subjects. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter The Mars of Maths</h1>
+    <input type="text" name="" id="in1">
+
+    <h1>Enter The Mars of Science</h1>
+    <input type="text" name="" id="in2">    
+
+    <h1>Enter The Mars of English</h1>
+    <input type="text" name="" id="in3">
+
+    <h1>Enter The Mars of Gujarati</h1>
+    <input type="text" name="" id="in4">
+
+    <h1>Enter The Mars of Hindi</h1>
+    <input type="text" name="" id="in5">
+
+    
+    <h1 id="avg"></h1>
+</body>
+</html>
+
+<script>
+    let a=document.getElementById("in1").value
+    let b=document.getElementById("in2").value
+    let c=document.getElementById("in3").value
+    let d=document.getElementById("in4").value
+    let e=document.getElementById("in5").value
+
+    let total=(+a + +b + +c + +d + +e)/5
+
+    
+    document.getElementById("avg").innerHTML=total
+</script>

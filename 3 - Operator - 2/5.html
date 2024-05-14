@@ -1,0 +1,27 @@
+<!-- 5.Calculate GST : If a goods or services is sold at Rs. 1,000 and the GST rate applicable is 18%, then the net price calculated will be = 1,000+ (1,000X(18/100)) = 1,000+180 = Rs. 1,180. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter Bill Amount</h1>
+    <input type="text" id="in1">
+
+
+
+    <h1 id="bill"></h1>
+</body>
+</html>
+
+<script>
+    let  value=document.getElementById("in1").value
+    let gst=0.18
+
+    let ans = +value +(+value * (0.18))
+
+    document.getElementById("bill").innerHTML=ans
+</script>

@@ -1,0 +1,42 @@
+<!-- 1. Write a program that calculates the ticket price based on age with the following conditions: age below 12 pay a ticket price of 5, age below 18 pay a ticket price of 10, age below 60 pay a ticket price of 20, age over 60 play a ticket price of 15 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label id="lable1">Enter Number of Person age in 1 to 12 :</label>
+    <input type="text" id="input1"> <br><br>
+
+    <label id="lable2">Enter Number of Person age in 13 to 18 :</label>
+    <input type="text" id="input2"> <br><br>
+
+    <label id="lable3">Enter Number of Person age in 19 to 60 :</label>
+    <input type="text" id="input3"> <br><br>
+
+    <label id="lable4">Enter Number of Person age below 60 :</label>
+    <input type="text" id="input4"> <br><br>
+
+    <label id="lable5">Total Ticket Price : <span id="ans"></span> </label>
+    
+</body>
+</html>
+<script>
+    
+    let a = document.getElementById("input1").value
+
+    let b = document.getElementById("input2").value
+
+    let c = document.getElementById("input3").value
+
+    let d = document.getElementById("input4").value
+
+    let e = +a*5 + +b*10 + +c*20 + +d*15
+
+    document.getElementById("ans").innerHTML=e
+    
+</script>

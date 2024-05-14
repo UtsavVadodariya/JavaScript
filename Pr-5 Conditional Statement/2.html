@@ -1,0 +1,47 @@
+<!-- 2. Write a program that calculates a discount based on the purchase amount.Prices equal or over 100 discount have a discount of 20. Prices equal or over 50 have a discount of 10. Otherwise discount is 0 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="lable1">Enter your Purchase Amount :</label>
+    <input type="text" id="input1">
+
+    <h1 id="ans"></h1>
+</body>
+
+</html>
+
+<script>
+    var a = document.getElementById("input1").value
+
+    if (a === "") {
+        document.write("Enter Valid Value..")
+    }
+    else {
+        if (a <= 49 && a >= 0) {
+            document.getElementById("ans").innerHTML = "No Discount.."
+
+        }
+        else if (a < 100 && a >= 50) {
+            var b = a - a * 0.10
+            document.getElementById("ans").innerHTML = b
+
+        }
+        else if (a >= 100) {
+            var b = a - a * 0.20
+            document.getElementById("ans").innerHTML = b
+        }
+        else {
+            document.getElementById("ans").innerHTML = "Enter Positive Value.."
+
+        }
+
+    }
+</script>

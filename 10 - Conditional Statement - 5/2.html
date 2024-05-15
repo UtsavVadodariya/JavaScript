@@ -1,0 +1,79 @@
+<!-- **Question 2:**
+
+**Title:** Calculator
+
+**Description:** Create a JavaScript program that takes three variables: `number1`, `number2`, and `operator`. Using a `switch-case` statement, perform a mathematical operation based on the value of `operator`. Handle the following cases:
+- If `operator` is "+", add `number1` and `number2` and console.log the result.
+- If `operator` is "-", subtract `number2` from `number1` and console.log the result.
+- If `operator` is "*", multiply `number1` and `number2` and console.log the result.
+- If `operator` is "/", divide `number1` by `number2` and console.log the result.
+- For any other value of `operator`, console.log("Invalid operator"). -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <label for="" >Enter First Value :</label>
+    <input type="text" id="input1"> 
+<br><br>
+    <select name="" id="option">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <br><br>
+    <label for="" >Enter Second Value :</label>
+    <input type="text" id="input3"> 
+    <br><br>
+    <h1 id="ans"></h1>
+</center>
+
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("input1").value
+
+    let b = document.getElementById("option").value
+
+    let c = document.getElementById("input3").value
+
+    if(a === "" && b === "" && c === "")
+    {
+        document.getElementById("ans").innerHTML = ""
+    }
+    else{
+
+        switch(b)
+        {
+            case "+" :
+            document.getElementById("ans").innerHTML = +a + +c    
+            console.log(+a + +c);
+            break
+            case "-" : 
+            document.getElementById("ans").innerHTML = +a - +c    
+
+            console.log(+a - +c);
+            break
+            case "*" : 
+            document.getElementById("ans").innerHTML = +a * +c    
+
+            console.log(+a * +c);
+            break
+            case "/" : 
+            document.getElementById("ans").innerHTML = +a / +c    
+
+            console.log(+a / +c);
+            break
+
+            default : console.log("Enter Valid Option");
+        }
+    }
+</script>

@@ -1,0 +1,46 @@
+<!-- Q1. Find if a given string is palindrome. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Enter Any Sentance :</label><br>
+    <input type="text" id="input1"><br>
+    <h1 id="ans"></h1>
+</body>
+
+</html>
+
+<script>
+
+    let str = document.getElementById("input1").value
+
+    let res1 = ""
+    let res2 = ""
+
+    if (str === "") {
+        document.getElementById("ans").innerHTML = ""
+    }
+    else {
+        for (let i = 0; i <= str.length - 1; i++) {
+            res1 += str[i]
+        }
+
+        for (let i = str.length - 1; i >= 0; i--) {
+            res2 += str[i]
+        }
+
+        if (res1 === res2) {
+            document.getElementById("ans").innerHTML = "Palindrome !"
+        }
+        else {
+            document.getElementById("ans").innerHTML = "Not Palindrome "
+        }
+    }
+</script>

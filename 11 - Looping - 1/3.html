@@ -20,14 +20,13 @@
 <script>
     let a = document.getElementById("input1").value
 
-    if(a === "")
-    {
+    if (a === "") {
         document.getElementById("ans").innerHTML = ""
 
     }
-    else{
-    if(a % 2 === 0)
-    {
-        document.getElementById("ans").innerHTML = "Even Number"
-    }}
+    else {
+        if (a % 2 === 0) {
+            document.getElementById("ans").innerHTML = "Even Number"
+        }
+    }
 </script>

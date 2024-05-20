@@ -1,0 +1,37 @@
+<!-- Write a for loop that iterates from 1 to 50. For multiples of 3, print "Fizz" instead of the number, and for multiples of 5, print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="ans"></h1>
+</body>
+
+</html>
+
+<script>
+
+    for (var i = 1; i <= 50; i++) {
+
+
+        if (i % 15 == 0) {
+            document.getElementById("ans").innerHTML += "FizzBuzz" + "<br>"
+        }
+        else if (i % 5 == 0) {
+            document.getElementById("ans").innerHTML += "Buzz" + "<br>"
+        }
+        else if (i % 3 == 0) {
+            document.getElementById("ans").innerHTML += "Fizz" + "<br>"
+        }
+        else {
+            document.getElementById("ans").innerHTML += +i + "<br>"
+        }
+
+    }
+</script>

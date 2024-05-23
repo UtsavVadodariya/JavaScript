@@ -1,0 +1,57 @@
+<!-- **Question 1:**
+Using closures find sum of 3 numbers. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Enter First Number :</label>
+    <input type="text" id="num1">
+    <br><br>
+    <label for="">Enter Second Number :</label>
+    <input type="text" id="num2">
+    <br><br>
+    <label for="">Enter Third Number :</label>
+    <input type="text" id="num3">
+
+    <button onclick="btn()">Click Here</button>
+    <h1 id="ans"></h1>
+</body>
+
+</html>
+
+<script>
+    function btn()
+    {        
+        var a =  document.getElementById("num1").value
+        var b =  document.getElementById("num2").value
+        var c =  document.getElementById("num3").value
+
+        var sum = first(+a)(+b)(+c);
+
+        document.getElementById("ans").innerHTML  = sum
+
+    }
+    function first(a) {
+
+        return function second(b) {
+
+            return function third(c) {
+
+                return a + b + c
+            }
+
+            
+        }
+      
+
+
+    }
+   
+</script>

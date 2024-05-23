@@ -1,0 +1,47 @@
+<!-- **Question 3:**
+Create a function `multiplier(factor)` that takes a factor as a parameter. The returned function should take a number as a parameter and return the product of that number and the factor. Use closures to capture the `factor` parameter in the inner function. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Factor :</label>
+    <input type="text" id="num1">
+    <br><br>
+    <label for="">Enter Number :</label>
+    <input type="text" id="num2">
+
+    <button onclick="btn()">Click Here</button>
+    <h1 id="ans"></h1>
+
+</body>
+</html>
+
+<script>
+        function btn()
+    {        
+        var a =  document.getElementById("num1").value
+        var b =  document.getElementById("num2").value
+
+        var sum = first(+a)(+b);
+
+        document.getElementById("ans").innerHTML  = sum
+
+    }
+    function first(a) {
+
+        return function second(b) {
+
+            return a * b 
+            
+        }
+      
+
+
+    }
+
+</script>

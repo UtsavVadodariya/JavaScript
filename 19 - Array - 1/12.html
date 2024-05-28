@@ -1,0 +1,34 @@
+<!-- Q13. Find all vowel in string using charAt function. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="ans"></h1>
+</body>
+</html>
+
+<script>
+    let str = "aehy"
+    let cnt = 0
+        // document.getElementById("ans").innerHTML = str.charAt()
+
+        for(let i = 0 ; i <= str.length ; i ++)
+        {
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i'|| str.charAt(i) == 'o' || str.charAt(i) == 'u')
+            {
+                cnt += 1
+
+            }
+        }
+        document.getElementById("ans").innerHTML = str
+        document.getElementById("ans").innerHTML = cnt
+
+
+
+
+</script>

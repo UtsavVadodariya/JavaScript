@@ -1,0 +1,30 @@
+<!-- 2. SUM OF ODD- HOF
+Given an array of numbers find the sum of odd elements Sample Input - [1, 2, 3, 4] Sample Output - 4 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="an"></h1>
+
+</body>
+</html>
+
+<script>
+
+    let arr = [1,2,3,4,5]
+    var odd = 0
+    let ans = arr.filter((el,oddsum)=>{
+        if(el % 2 != 0){
+            odd = el + oddsum
+        }
+    })
+        document.getElementById("an").innerHTML = odd
+
+
+
+</script>

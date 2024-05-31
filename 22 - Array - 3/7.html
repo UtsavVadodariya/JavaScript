@@ -1,0 +1,31 @@
+<!-- Q7.Write a function filterAndMap that takes an array of numbers and returns a new array containing the squares of the even numbers only. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="an"></h1>
+</body>
+
+</html>
+
+<script>
+
+    let arr = [1, 2, 3, 4, 5]
+
+    let ans = arr.filter((el) => {
+
+        return el % 2 == 0
+
+    }).map((num) => {
+        return num*num
+    })
+    document.getElementById("an").innerHTML = ans
+
+</script>

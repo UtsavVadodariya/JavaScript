@@ -1,0 +1,29 @@
+<!-- Q8.Write a function processArray that takes an array of strings, filters out the strings with less than 
+5 characters, and then converts the remaining strings to uppercase. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="an"></h1>
+</body>
+</html>
+
+<script>
+
+let arr = ["pink" , "purple" , "navyblue" , "white" , "black" , "yellow"]
+
+let res = arr.filter((el)=>{
+    return el.length > 5
+}).map((el)=>{
+    return el.toUpperCase()
+})
+
+
+   document.getElementById("an").innerHTML = res
+</script>

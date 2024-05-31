@@ -1,0 +1,24 @@
+<!-- Q1. Use forEach and multiply each element by 3. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="an"></h1>
+</body>
+</html>
+
+<script>
+    let arr = [1,5,9,7]
+    let sum = 0
+    var ans = arr.forEach((el,index) => {
+        arr[index] = el * 3 
+    })
+
+    document.getElementById("an").innerHTML = arr
+    
+</script>

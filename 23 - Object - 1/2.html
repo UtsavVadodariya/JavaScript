@@ -1,0 +1,31 @@
+<!-- 2. Question: Write a function to print all the values of the 'car' object -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let Car = {
+        Name: "XUV 700",
+        Model: "2021",
+        Color: "White"
+    }
+    function value() {
+        for (key in Car) {
+            console.log(key + "=" + Car[key])
+        }
+    }
+    value()
+</script>

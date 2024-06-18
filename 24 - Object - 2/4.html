@@ -1,0 +1,32 @@
+<!-- Q4 Sum of marks of all students -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    let students = [
+        { name: "Utsav", roll: "7", marks: 85 },
+        { name: "Ayush", roll: "4", marks: 75 },
+        { name: "Rutul", roll: "6", marks: 84 },
+        { name: "Vrushil", roll: "5", marks: 78 }
+    ]
+
+    let ans = students.reduce((el , cur) => {
+        return el += cur.marks
+    }, 0)
+    console.log(ans)
+
+</script>

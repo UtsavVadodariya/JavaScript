@@ -1,0 +1,36 @@
+<!-- Q5.Return only name of students who scored more than 60 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    let students = [
+        { name: "Utsav", roll: "7", marks: 85 },
+        { name: "Ayush", roll: "4", marks: 75 },
+        { name: "Rutul", roll: "6", marks: 84 },
+        { name: "Vrushil", roll: "5", marks: 58 }
+    ]
+
+
+    let ans = students.filter((el)=>{
+
+        if(el.marks > 60){
+            return el.name
+        }
+    })
+
+    console.log(ans)
+</script>

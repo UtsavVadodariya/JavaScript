@@ -1,0 +1,39 @@
+<!-- Q3 Return details of students who scored more than 60 and roll number greater than 15. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    let students = [
+        { name: "Utsav", roll: "17", marks: "85" },
+        { name: "Ayush", roll: "4", marks: "75" },
+        { name: "Rutul", roll: "16", marks: "84" },
+        { name: "Vrushil", roll: "5", marks: "58" }
+    ]
+
+
+    let ans = students.map((el)=>{
+        return el.marks>60
+    })
+
+    console.log(ans)
+
+    let ans1 = students.map((el)=>{
+        return el.roll>15
+    })
+
+    console.log(ans1)
+</script>

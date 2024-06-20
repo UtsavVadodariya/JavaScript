@@ -1,0 +1,68 @@
+<!-- 2.Complete all the functions by creating a copy of the above template with the file name content_manipulation.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Content Manipulation</title>
+</head>
+
+<body>
+
+    <h1 id="firstname">Your FirstName</h1>
+
+    <div id="lastname">
+
+        Your LastName </div>
+
+    <p id="fullname">Your First&LastName</p>
+
+    <hr />
+
+    <button onclick="setFirstName()">FIRSTNAME</button>
+
+    <button onclick="setLastName()">LASTNAME</button>
+
+    <button onclick="setFullName()">FULLNAME</button>
+
+    <button onclick="resetDefaults()">RESET DEFAULTS</button>
+
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+
+    function setFirstName() {
+        document.querySelector("#firstname").textContent = "Utsav"
+    }
+
+
+    function setLastName() {
+        document.querySelector("#lastname").textContent = "Vadodariya"
+    }
+
+
+
+    function setFullName() {
+
+        let firstname = document.querySelector("#firstname").textContent
+        let lastname = document.querySelector("#lastname").textContent
+
+        document.getElementById("fullname").textContent = firstname + " " + lastname
+    }
+
+ 
+
+
+    function resetDefaults() {
+        document.querySelector("#firstname").textContent = ""
+        document.querySelector("#lastname").textContent = ""
+        document.querySelector("#fullname").textContent = ""
+    }
+
+
+</script>

@@ -12,10 +12,15 @@ function todoFun(){
 
     let td2 = document.createElement("td")
     td2.innerHTML = id
+    if(id === "High"){
+        td2.style.backgroundColor = "red"
+    }
+    else{
+        td2.style.backgroundColor = "green"
+    }
 
     let td3 = document.createElement("td")
     td3.innerHTML = "DELETE"
-
 
     tr.append(td1 , td2 , td3)
 

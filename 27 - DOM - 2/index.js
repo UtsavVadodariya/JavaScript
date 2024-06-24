@@ -1,6 +1,6 @@
 document.querySelector("form").addEventListener("submit" , todoFun)
 
-function todoFun(){
+function todoFun(event){
     event.preventDefault()
 
     let name = document.getElementById("task").value

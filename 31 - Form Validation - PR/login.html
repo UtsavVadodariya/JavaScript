@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" id="login">
+        <a href="signup.html" id="sign">Sign up</a>
+
+        <center>
+            <h2 id="h2">Login</h2>
+
+        </center>
+<br><br><br>
+        <label for="">Username <span>*</span></label>
+        <br>
+        <input type="text" id="name">
+        <br><br>
+        <label for="">Password <span>*</span></label>
+        <br>
+        <input type="text" id="pass">
+        <br><br>
+        <input type="submit" id="submit">
+<center>
+    <br>
+        <p id="err"></p>
+    </center>
+    </form>
+</body>
+</html>
+
+<script>
+
+    document.getElementById("login").onsubmit = function (event){
+        document.getElementById("err").innerHTML = ""
+
+        event.preventDefault()
+
+        try{
+
+            let name = document.getElementById("name").value
+            let password = document.getElementById("pass").value
+
+            if(name === "")
+            {
+                throw new Error("please enter valid name")
+            }
+            if(password === "")
+            {
+                throw new Error("please enter password")
+
+            }
+        }
+        catch(err)
+        {
+            document.getElementById("err").style.color = "red"
+            document.getElementById("err").innerHTML = err.message
+        }
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile and Electric Vehicle</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class ElectricVehicle {
+        constructor(make, model) {
+            this.make = make;
+            this.model = model;
+        }
+
+        charge() {
+            console.log(this.make + this.model + " is charging.");
+        }
+    }
+
+    class Automobile extends ElectricVehicle {
+        constructor(make, model, fuelType) {
+            super(make, model);
+            this.fuelType = fuelType;
+        }
+
+        startEngine() {
+            console.log(this.make + this.model + "with" + this.fuelType + " engine is starting.");
+        }
+    }
+
+    const myCar = new Automobile('Toyota', 'Camry', 'petrol');
+
+    myCar.charge(); 
+    myCar.startEngine(); 
+</script>

@@ -1,0 +1,41 @@
+<!-- JS POLYFILLS
+Create your custom map method (myMap), which will work exactly similar to Array.map().Create your custom filter method (myFilter), which will work exactly similar to Array.filter(). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom map and filter</title>
+</head>
+<body>
+    <script>
+        function myMap(arr, callback) {
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                result.push(callback(arr[i], i, arr));
+            }
+            return result;
+        }
+
+        function myFilter(arr, callback) {
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (callback(arr[i], i, arr)) {
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+
+        const numbers = [1, 2, 3, 4, 5];
+
+        const doubledNumbers = myMap(numbers, (num) => num * 2);
+        console.log('Doubled numbers:', doubledNumbers);
+
+        const evenNumbers = myFilter(numbers, (num) => num % 2 === 0);
+        console.log('Even numbers:', evenNumbers);
+    </script>
+        
+</body>
+</html>

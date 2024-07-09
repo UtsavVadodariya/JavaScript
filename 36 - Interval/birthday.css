@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-size: 100%;
+}
+.main{
+    height: 100vh;
+    background-image: url(1.jpg);
+    background-size: 100% 100%;
+}
+span{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(214, 226, 235);
+    padding: 30px;
+    border-radius: 20px;
+}
+.time{
+    padding-top: 300px;
+    padding-left: 50px;
+}
+img{
+    display: none;
+    height: 99%;
+    width: 100%;
+}

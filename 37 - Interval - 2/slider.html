@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100%;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Media/BAU/D132995370_Homepage_DesktopHeroTemplate_3000x1200._CB557152260_.jpg"
+        alt="">
+    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/march/brands/GW/Under_1499_Tallhero_3000x1200._CB561212093_.jpg"
+        alt="">
+    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/GW/Uber/Nov/D103625178_DesktopTallHero_3000x1200_V3._CB558389732_.jpg"
+        alt="">
+    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Beauty/GW/UBS/4-1._CB569664487_.jpg" alt="">
+    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/24/BAU/feb/PC_hero_1_2x_1._CB582889946_.jpg"
+        alt="">
+</body>
+
+</html>
+
+<script>
+    let pic = document.querySelectorAll("img")
+    let index = 0;
+
+
+    function slider(index) {
+        for (i = 0; i < pic.length; i++) {
+            pic[i].style.display = "none"
+        }
+        pic[index].style.display = "block"
+    }
+
+
+    function show(){
+        setInterval(()=>{
+            slider(index)
+            index++
+
+            if(index === pic.length)
+        {
+            index = 0 
+        }
+        },1000)
+    }
+    show()
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="birthday.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="time">
+            <span id="hour"></span>
+            <span id="min"></span>
+            <span id="sec"></span>
+
+        </div>
+
+    </div>
+    <img src="4.jpg" alt="">
+</body>
+
+</html>
+
+<script>
+
+
+    let hours = 11;
+    let stop = setInterval(() => {
+        hours++
+        document.getElementById("hour").innerHTML = hours
+
+        if (hours === 12) {
+            clearInterval(stop)
+            document.querySelector("img").style.display="block"
+            document.querySelector("div").style.display="none"
+        }
+
+    }, 10000)
+    document.getElementById("hour").innerHTML = hours
+
+
+
+
+    let mins = 59;
+    let stop1 = setInterval(() => {
+        mins++
+        document.getElementById("min").innerHTML = mins
+
+        if (mins === 60) {
+            clearInterval(stop1)
+            document.getElementById("min").innerHTML = "00"
+
+        }
+
+    }, 10000)
+    document.getElementById("min").innerHTML = mins
+
+
+    let secs = 50;
+    let stop2 = setInterval(() => {
+        secs++
+        document.getElementById("sec").innerHTML = secs
+        if (secs === 60) {
+            clearInterval(stop2)
+            document.getElementById("sec").innerHTML = "00"
+
+        }
+    }, 1000)
+    document.getElementById("sec").innerHTML = secs
+
+</script>

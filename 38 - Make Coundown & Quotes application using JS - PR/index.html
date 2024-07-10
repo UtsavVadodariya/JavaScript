@@ -1,0 +1,125 @@
+<!-- Create a slider and countdown. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            font-size: 40px;
+        }
+
+        img {
+            display: none;
+        }
+
+        #en {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1 id="hour"></h1>
+        <h1>:</h1>
+        <h1 id="min"></h1>
+        <h1>:</h1>
+        <h1 id="sec"></h1>
+        <br>
+        <h1 id="en">World Environment Day</h1>
+
+        <br>
+        <img src="https://cdn.pixabay.com/photo/2023/07/08/19/28/leaves-8115077_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2022/12/03/13/01/butterfly-7632646_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2023/09/04/13/17/mushrooms-8232731_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2023/05/18/18/12/butterfly-8002932_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2023/05/18/18/12/butterfly-8002932_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2022/03/04/14/19/nature-7047433_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2021/07/24/10/24/dewdrops-6489287_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2022/05/05/01/05/nature-7175030_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2022/05/05/01/05/nature-7175030_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2022/10/22/13/23/flamingo-7539231_640.jpg" alt="">
+    </center>
+</body>
+
+</html>
+
+<script>
+    let hours = 11;
+    let stop = setInterval(() => {
+        hours++
+        document.getElementById("hour").innerHTML = hours
+
+        if (hours === 12) {
+            clearInterval(stop)
+            document.getElementById("en").style.display = "block"
+        }
+    }, 10000)
+    document.getElementById("hour").innerHTML = hours
+
+
+
+    let mins = 59;
+    let stop1 = setInterval(() => {
+        mins++
+        document.getElementById("min").innerHTML = mins
+
+        if (mins === 60) {
+            clearInterval(stop1)
+            document.getElementById("min").innerHTML = "00"
+            let index = 0;
+            let pic = document.querySelectorAll("img")
+
+            function slider(index) {
+                for (let i = 0; i < pic.length; i++) {
+                    pic[i].style.display = "none"
+                }
+                pic[index].style.display = "block"
+            }
+
+            function show() {
+                setInterval(() => {
+                    slider(index)
+                    index++
+
+                    if (index === pic.length) {
+                        index = 0
+                    }
+                }, 1000)
+            }
+            show()
+
+        }
+    }, 10000)
+    document.getElementById("min").innerHTML = mins
+
+
+
+    let secs = 50;
+    let stop2 = setInterval(() => {
+        secs++
+        document.getElementById("sec").innerHTML = secs
+
+        if (secs === 60) {
+            clearInterval(stop2)
+            document.getElementById("sec").innerHTML = "00"
+
+        }
+    }, 1000)
+    document.getElementById("sec").innerHTML = secs
+
+
+
+
+</script>

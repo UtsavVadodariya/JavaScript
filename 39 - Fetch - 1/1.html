@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store API</title>
+    <style>
+        #main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+
+    <script>
+        fetch('https://fakestoreapi.com/products')
+            .then((res) => {
+                return res.json();
+            })
+            .then((json) => {
+                console.log(json);
+                fakestoreapi(json); // Call the function with the JSON data
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        function fakestoreapi(json) {
+            json.map((el) => {
+                let div = document.createElement('div');
+                let h3 = document.createElement('h3');
+                let img = document.createElement('img');
+
+                div.className = 'product';
+                h3.textContent = el.title; // Correct property for title
+                img.src = el.image;
+
+                div.append(h3, img);
+                document.getElementById("main").append(div);
+            });
+        }
+    </script>
+</body>
+</html>

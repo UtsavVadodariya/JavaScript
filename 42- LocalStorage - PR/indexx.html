@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #search{
+            padding-left: 10px;
+        }
+        #search-btn{
+            border: 1px solid;
+        }
+        .div1 {
+            border: 2px solid;
+            display: inline-block;
+            width: 350px;
+            margin-top: 50px;
+            border-radius: 20px;
+            padding-left: 20px;
+        }
+        .h1{
+            font-size: 30px;
+        }
+        .img-1{
+            height: 200px;
+            width: 200px;
+        }
+        #main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="search" placeholder="Search Category">
+    <button id="search-btn" onclick="search()">Search</button>
+    <div id="main"></div>
+
+</body>
+
+</html>
+
+<script>
+    function search() {
+        let data = document.getElementById("search").value
+
+        fetch(`https://fakestoreapi.com/products/category/${data}`)
+            .then((res) => {
+                return res.json()
+            }).then((json) => {
+                console.log(json)
+                displayData(json)
+            })
+    }
+
+    function displayData(json) {
+
+        json.map((el) => {
+
+            let div = document.createElement("div")
+            div.className = "div1"
+
+            let text = document.createElement("h1")
+            text.innerHTML = el.category
+            text.className = "h1"
+
+            let text1 = document.createElement("h3")
+            text1.innerHTML = el.title
+
+            let img = document.createElement("img")
+            img.setAttribute("src", el.image)
+            img.className = "img-1"
+
+            div.append(text,text1, img)
+            document.getElementById("main").append(div)
+        })
+
+
+    }
+
+
+</script>

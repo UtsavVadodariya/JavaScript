@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userName" placeholder="Enter name">
+    <button id="addUser">Add User</button>
+    <button id="editUser" style="display: none;">Update User</button>
+
+    <div id="userList"></div>
+</body>
+</html>
+
+<script>
+    let editIndex = -1;
+
+    function DisplayData() {
+
+        let div = document.getElementById("userList")
+
+        div.innerHTML = ""
+
+        let users = JSON.parse(localStorage.getItem("Users")) || []
+
+        users.forEach((element, index) => {
+            let h1 = document.createElement("h1")
+            h1.innerText = element.name
+
+            let btn = document.createElement("button")
+            btn.innerText = "Delete"
+            btn.addEventListener("click", function () {
+                deletee(index)
+
+            })
+            let editbtn = document.createElement("button")
+            editbtn.innerText = "Edit"
+            editbtn.addEventListener("click", function () {
+                editData(element.name, index)
+
+            })
+            div.append(h1, btn, editbtn)
+        });
+    }
+
+    function deletee(index) {
+
+        let users = JSON.parse(localStorage.getItem("Users"))
+        users.splice(index, 1)
+        localStorage.setItem("Users", JSON.stringify(users))
+        DisplayData()
+
+    }
+
+    function editData(name, index) {
+
+        let user = document.getElementById("userName")
+        user.value = name
+
+
+
+        document.getElementById("editUser").style.display = 'inline'
+        document.getElementById("addUser").style.display = 'none'
+        editIndex = index
+    }
+
+
+
+
+
+
+
+    document.getElementById("addUser").addEventListener("click", function () {
+
+        let users = JSON.parse(localStorage.getItem("Users")) || []
+
+
+        let user = document.getElementById("userName").value
+
+        let obj = {
+            name: user
+        }
+
+        users.push(obj)
+
+        localStorage.setItem("Users", JSON.stringify(users))
+        DisplayData()
+        
+        document.getElementById("userName").value = ""
+        document.getElementById("editUser").style.display = 'none'
+        document.getElementById("addUser").style.display = 'inline'
+
+    })
+
+    document.getElementById("editUser").addEventListener("click", function () {
+
+
+        let users = JSON.parse(localStorage.getItem("Users")) || []
+
+
+        let user = document.getElementById("userName").value
+        console.log(user, editIndex)
+
+        users[editIndex].name = user
+
+        localStorage.setItem("Users", JSON.stringify(users))
+        DisplayData()
+        document.getElementById("userName").value = ""
+        editIndex = -1
+    })
+    DisplayData()
+
+</script>

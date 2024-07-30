@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <center>
+        <h2>check weather of your city</h2>
+        <input type="search" id="input" placeholder="Enter City">
+        <button id="btn" onclick="searchbtn()">Search</button>
+        <!-- <img src="https://cdn.weatherapi.com/weather/64x64/day/353.png" alt=""> -->
+        <div id="main"></div>
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    function searchbtn() {
+        let data = document.getElementById("input").value
+
+        fetch(`https://api.weatherapi.com/v1/current.json?key=e408e49ceeb9451ab0491732243007&q=${data}`)
+            .then((res) => {
+                return res.json()
+            }).then((json) => {
+                console.log(json)
+                displayweather(json)
+            })
+    }
+    function displayweather(data) {
+
+
+        let div = document.createElement("div")
+        div.className = "div1"
+
+        let text = document.createElement("h3")
+        text.innerHTML = data.location.name
+
+        let text1 = document.createElement("p")
+        text1.innerHTML = "Temperature :  " + data.current.temp_c + "°C"
+
+        let text2 = document.createElement("p")
+        text2.innerHTML = "Wind Speed :  " + data.current.wind_kph + "  kp/h"
+
+        let img1 = document.createElement("img")
+        img1.setAttribute("src", data.current.condition.icon)
+        img1.className = "img1  "
+
+        let removeBtn = document.createElement("button")
+        removeBtn.className = "remove"
+        removeBtn.textContent = "Remove Data"
+        removeBtn.addEventListener("click", function () {
+            main.removeChild(div)
+        })
+
+        div.append(text, text1, text2,img1,removeBtn)
+        document.getElementById("main").append(div)
+
+
+    }
+</script>

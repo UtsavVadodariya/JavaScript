@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{  
+  min-height: 100vh;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-image: linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)), url(https://cdn.who.int/media/images/default-source/mca/mca-covid-19/coronavirus-2.tmb-1920v.jpg?sfvrsn=4dba955c_19);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+input{
+  width: 400px;
+  height: 50px;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0,0,0, 0.12);
+  border-bottom: 2px solid #6e110a;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.main1{
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 200px;
+}
+
+.btn{
+    height: 45px;
+    width: 150px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+}
+
+#main div{
+    width: 100%;
+    color: white;
+}
+
+#m1 div{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;
+}
+#m1 div .p2{
+  font-size: 30px;
+  font-weight: bold;
+}
+.img1{
+    height: 50px;
+    width: 50px;
+}
+
+.p2{
+  width: 100%;
+}
+
+</style>
+
+<body>
+
+    <div class="main1">
+
+        <input type="text" id="input" placeholder="Enter State For View Corona Details"><br><br><br>
+        <button onclick="searchData()" class="btn">View</button>
+        <div id="m1"></div>
+        <div id="main"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function searchData() {
+
+        let value = document.getElementById("input").value
+
+        fetch(`https://data.covid19india.org/v4/min/data.min.json`)
+            .then((res) => {
+                return res.json()
+            }).then((json) => {
+                console.clear()
+                console.log(json)
+                displayData(json , value)
+            }).catch(err => {
+                console.log("Error");
+            })
+
+    }   
+
+    function display() {
+            let div = document.createElement("div")
+            document.getElementById("m1").innerHTML= ""
+
+            let value = document.getElementById("input").value
+            
+            let text = document.createElement("p")
+            text.innerHTML = "DATA OF " + value
+            text.setAttribute("class" , "p2")
+
+            div.append(text)
+            document.getElementById("m1").append(div)
+
+    }
+
+    function displayData(json , value){
+
+        let div = document.createElement("div")
+        document.getElementById("main").innerHTML = ""
+
+        display()
+
+        let text = document.createElement("p")
+        text.innerHTML = "TESTED : " +  json[value].delta.tested
+                + "<br>vaccinated1 : " + json[value].delta.vaccinated1 
+                + "<br>vaccinated2 : " + json[value].delta.vaccinated2 
+        text.setAttribute("class" , "p2")
+
+        let text1 = document.createElement("p")
+        text1.innerHTML = "population : " + json[value].meta.population 
+        text1.setAttribute("class" , "p2")
+
+
+        let text3 = document.createElement("p")
+        text3.innerHTML ="confirmed : " + json[value].delta21_14.confirmed 
+        text3.setAttribute("class" , "p2")
+
+        let text4 = document.createElement("p")
+        text4.innerHTML ="confirmed : " + json[value].delta7.confirmed
+        text4.setAttribute("class" , "p2")
+
+
+        let text2 = document.createElement("p")
+        text2.innerHTML ="vaccinated1 : " + json[value].total.vaccinated1 
+                + "<br>vaccinated2 : " + json[value].total.vaccinated2 
+        text2.setAttribute("class" , "p2")
+
+        div.append(text , text1 , text3 , text4 , text2)
+
+        document.getElementById("main").append(div)
+
+    }
+
+</script>
